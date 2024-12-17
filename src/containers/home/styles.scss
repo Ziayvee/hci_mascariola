@@ -1,0 +1,110 @@
+.home {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+
+  .home-img img {
+    width: 35vw;
+    animation: shakeAndFlicker 2s ease-in-out infinite;
+}
+
+
+@keyframes shakeAndFlicker {
+    0%, 100% {
+        transform: translateX(0);
+        filter: brightness(1);
+    }
+    25% {
+        transform: translateX(-0.5rem);
+        filter: brightness(0.8);
+    }
+    50% {
+        transform: translateX(0);
+        filter: brightness(1);
+    }
+    75% {
+        transform: translateX(0.5rem);
+        filter: brightness(0.8);
+    }
+}
+
+
+  &__text-wrapper {
+    display: flex;
+    justify-content: center;
+
+    h1 {
+      color: var(--yellow-theme-background-color);
+      margin: 0;
+      font-weight: 500;
+      font-size: 8rem;
+      line-height: 10rem;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typingEffectAnimation 2.5s steps(20, end);
+    }
+    
+    p {
+      color: var(--yellow-theme-main-color);
+      margin: 0;
+      margin-top: 1rem; /* Add some spacing between h1 and p */
+      font-weight: 200;
+      font-size: 3rem;
+      line-height: 4rem; /* Adjust the line height for better readability */
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+
+    }
+    
+  }
+  &__contact-me{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+
+      &:hover{
+        background: var(--yellow-theme-main-color);
+        color: #000000;
+      }
+    }
+  }
+
+
+
+
+@media only screen and (max-width: 550px) {
+  .home__text-wrapper h1 {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+  .home__text-wrapper h1 {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .home__text-wrapper h1 {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+}
+
+@keyframes typingEffectAnimation {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
